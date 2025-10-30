@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: adno-web
+    ports:
+      - "8080:80"
+    environment:
+      - ADNO_MODE=${ADNO_MODE}
+      - ADNO_TITLE=${ADNO_TITLE}
+      - ADNO_FOOTER=${ADNO_FOOTER}
+      - ADNO_FOOTER_TEXT=${ADNO_FOOTER_TEXT}
+      - GRANTED_IMG_EXTENSIONS=${GRANTED_IMG_EXTENSIONS}
+      - CORS_SERVER=${CORS_SERVER}
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
