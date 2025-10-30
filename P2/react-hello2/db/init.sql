@@ -8,4 +8,7 @@ INSERT INTO items (name, value) VALUES
   ('beta', 20),
   ('gamma', 30),
   ('delta', 40),
-  ('epsilon', 50);
+  ('epsilon', 50),
+  ('zita', 60),
+  ('ita', 70),
+  ('thita', 80);

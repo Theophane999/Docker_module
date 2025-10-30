@@ -2,25 +2,26 @@ services:
   db:
     image: mariadb:11
     environment:
-      MARIADB_ROOT_PASSWORD: root
-      MARIADB_DATABASE: appdb
-      MARIADB_USER: app
-      MARIADB_PASSWORD: app
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
       - ./db:/docker-entrypoint-initdb.d:ro
+      - db_data:/var/lib/mysql
     networks:
       - backend_net
 
   api:
     build: ./backend
     environment:
-      DB_HOST: db
-      DB_PORT: "3306"
-      DB_USER: app
-      DB_PASSWORD: app
-      DB_NAME: appdb
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
     ports:
       - "3000:3000"
     depends_on:
@@ -33,9 +34,9 @@ services:
   web:
     build: ./frontend
     environment:
-      - VITE_API_URL=http://localhost:3000
+      - VITE_API_URL=${VITE_API_URL}
     ports:
-      - "80:80"
+      - "5173:5173"
     depends_on:
       - api
     restart: no
@@ -47,3 +48,6 @@ networks:
     driver: bridge
   frontend_net:
     driver: bridge
+    
+volumes:
+  db_data:
