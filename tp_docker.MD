@@ -90,6 +90,18 @@
 --> Fournir l'URL des dépot de l'application
 --> Décrire les enjeux techniques de la conteneurisation liée à l'application (technologies plus mises à jour, nombreuses dépendances, interconnexion avec d'autres systèmes ...)
 
+----------------------------
+1
+----------------------------
+https://github.com/adnodev/adno
+Mise en place d'un docker sur une application front en nodeJS.
+Nombreuses dépendances présentes.
+
+----------------------------
+2
+----------------------------
+https://github.com/gohugoio/hugo
+
 - Écrire l'ensemble des fichiers permettant de déployer ces application avec Docker, docker-compose
 
 - Critères évalués
