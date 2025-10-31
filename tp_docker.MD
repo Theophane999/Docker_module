@@ -27,8 +27,30 @@
    - On prendra soin de ne pas inclure des fichiers et dossiers inutiles dans l'image (fichier .dockerignore)
 - Construire l'image en local, crée un conteneur l'utilisant et accèder à l'app
 
---> À compléter : Fournir les commandes utilisées
+// Dockerfile
+From node:22
+WORKDIR /app
+COPY ./ /app
+RUN npm install
+EXPOSE 3000
+CMD ["npm", "run", "dev"]
 
+//Creer une images docker :
+docker build -t reacthello . --no-cache
+// Visualiser une images
+docker images
+
+//utiliser l'image que nous venons de construire et la transformer en conteneur
+exécutable
+docker run -p 3008:3000 reacthello
+
+
+services:
+ react-app:
+ build: .
+ ports:
+ - "3000:3000"
+ 
 - Écrire un fichier `docker-compose.yml` permettant de déployer cette application
 
 - Se connecter au VPS Debian fournie (durant l'installation vous pouvez avancer sur la partie 2)
@@ -43,7 +65,9 @@
 
 - Publier votre image sur Dockerhub 
 
---> À compléter : Fournir URL de l'image sur Dockerhub
+Fournir URL de l'image sur Dockerhub
+https://hub.docker.com/repository/docker/rayaandh/reactapp/tags/latest/sha25624a9f642240330825ec9ac95a580d75df7f700d7a570e2a033dc689eaeb38d56
+https://hub.docker.com/r/rayaandh/react-app
 
 - Optimiser la taille de votre image avec docker-slim et la publier sur Dockerhub
 
