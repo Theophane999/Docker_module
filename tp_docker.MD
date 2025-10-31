@@ -58,6 +58,9 @@ services:
     - Se connecter en ssh 
     - Installer Docker et docker-compose
     - Lancer `docker run hello-world` pour vérifier que votre installation fonctionne bien
+
+L'application tourne bien sur le port 80. http://51.91.110.215/
+
 - Déployer l'app `react-hello` sur le VPS via docker-compose 
   - Note : Il peut être utile de passer par un multi stage build
  
@@ -102,6 +105,8 @@ services:
 
 - Déployer cette application sur le VPS
    - Utiliser un VPS Azur avec crédit étudiant ou VPS OVH Tetras si reçu 
+   
+L'application tourne bien sur le port 80. http://51.91.110.215/
 
 - Accèder à la BDD de données depuis votre poste en passant par un tunnel SSH. Je vous conseille l'outil DBeaver. 
     - Seulement le front et l'API doivent être exposé sur le net, attention à la sécurité 
