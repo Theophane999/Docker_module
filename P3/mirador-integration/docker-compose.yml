@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  mirador:
+    build: .
+    ports:
+      - "8082:1234"
