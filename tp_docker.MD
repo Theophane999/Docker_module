@@ -175,7 +175,8 @@ Certaines sont vielles, mal documentées, incompréhensibles, c'est volontaire !
 - Qu'est ce qu'un Reverse Proxy et à quoi est ce que ça sert ? 
 - Qu'est ce qu'un Application Proxy et à quoi est ce que ça sert ?
 
---> À compléter
+Reverse Proxy : C’est un serveur intermédiaire qui reçoit les requêtes des clients et les redirige vers un ou plusieurs serveurs backend.
+Application Proxy : C’est un serveur qui agit comme intermédiaire pour un protocole HTTP/HTTPS entre un client et un serveur d’application, en analysant et filtrant les requêtes au niveau applicatif pour rediriger au bon endroit.
 
 - Installer et déployer Traefik via Docker sur votre VPS
    - Traefik recoit le trafik sur les ports classiques (80, 443)
