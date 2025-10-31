@@ -44,7 +44,7 @@ docker images
 exécutable
 docker run -p 3008:3000 reacthello
 
-
+// docker-compose.yml
 services:
  react-app:
  build: .
@@ -74,6 +74,11 @@ https://hub.docker.com/r/rayaandh/react-app
 --> À compléter : Fournir URL de l'image slim sur Dockerhub et la taille avant/après optimisation
 
 - Modifier votre fichier docker-compose pour que votre app utilise l'image Dockerhub
+
+// docker-compose.yml
+services:
+ react-app:
+ image: rayaandh/react-app
 
 - Fournissez dans `P1` le ou les fichiers compose finaux et le fichier Dockerfile.
 
