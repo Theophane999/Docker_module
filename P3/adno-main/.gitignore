@@ -138,6 +138,3 @@ adno-light/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-
-# ENV
-.env
