@@ -1,0 +1,17 @@
+__pycache__
+.DS_Store
+venv
+db
+adele.sqlite
+.idea
+*.pyc
+.coverage
+coverage.xml
+gunicorn.conf.py
+# Frontend directories and files
+app/static/js/build.js
+node_modules/
+npm-debug.log*
+*.js.map
+report.html
+/tests/data/adele.test.sqlite

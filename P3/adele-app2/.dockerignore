@@ -1,0 +1,19 @@
+# Dépendances locales
+/node_modules
+/venv
+__pycache__
+*.pyc
+
+# Dossiers créés au runtime/dev
+/db/
+/dist/
+/build/
+
+# Fichiers de développement/système
+.git
+.gitignore
+.DS_Store
+*.log
+
+# Si vous utilisez des secrets locaux
+.env

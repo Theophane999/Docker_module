@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  # 1. Service de l'API/Application Adele-app
+  api:
+    # Indique de construire l'image à partir du Dockerfile dans le répertoire courant
+    build: .
+    container_name: adele_app
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    # Configuration des variables d'environnement de l'application
+    environment:
+      # Assurez-vous que l'API utilise ces variables pour se connecter à la BDD
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=adele_user
+      - DB_PASSWORD=dev_password
+      - DB_NAME=adele_db
+      - FLASK_ENV=production # Assurez un environnement propre
+
+  # 2. Service de la Base de Données (PostgreSQL)
+  db:
+    image: postgres:15-alpine
+    container_name: adele_db
+    restart: always
+    environment:
+      - POSTGRES_USER=adele_user
+      - POSTGRES_PASSWORD=dev_password
+      - POSTGRES_DB=adele_db
+    # Port exposé pour la vérification (optionnel)
+    # ports:
+    #   - "5432:5432"
+    volumes:
+      # Persiste les données dans un volume Docker nommé
+      - db_data:/var/lib/postgresql/data/
+
+# Volumes persistants pour la base de données
+volumes:
+  db_data:
