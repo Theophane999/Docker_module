@@ -1,3 +1,6 @@
 services:
   react-app:
-    image: ./
+    build: .
+    container_name: react-app
+    ports:
+      - "3000:3000"
