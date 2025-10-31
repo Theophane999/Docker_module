@@ -134,7 +134,14 @@ Nombreuses dépendances présentes.
 ----------------------------
 2
 ----------------------------
-https://github.com/gohugoio/hugo
+https://github.com/chartes/adele-app
+Pas eut le temps de finir malheureusement mais complexité++
+
+----------------------------
+3
+----------------------------
+https://github.com/projectmirador/mirador-integration
+Quelques dépendances, difficulté OK
 
 - Écrire l'ensemble des fichiers permettant de déployer ces application avec Docker, docker-compose
 
